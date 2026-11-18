@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f5f0">
-  <meta name="description" content="個性豊かな3人のメンバーを紹介するプロフィールサイトです。">
-  <title>3人のプロフィール | Our Profile</title>
+  <meta name="theme-color" content="#f5f1e4">
+  <meta name="description" content="3人の個性と制作物を紹介するポートフォリオサイトです。">
+  <title>3人のポートフォリオ | Our Portfolio</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f6f5f0;
-      --ink: #202820;
-      --muted: #6b746c;
-      --green: #355d48;
-      --lime: #d7ed9b;
-      --line: #dedfd6;
-      --serif: "Iowan Old Style", "Yu Mincho", "Hiragino Mincho ProN", serif;
-      --sans: "Avenir Next", Avenir, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      --paper: #f5f1e4;
+      --ink: #2c2e2a;
+      --muted: #80827f;
+      --green: #8ed462;
+      --line: #d5d5d4;
+      --sandstone: #e0dbce;
+      --white: #ffffff;
+      --blue: #2ba0ff;
+      --coral: #ff705d;
+      --yellow: #f5e211;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * {
@@ -40,7 +43,7 @@
     }
 
     .page-shell {
-      width: min(1120px, calc(100% - 64px));
+      width: min(1200px, calc(100% - 64px));
       margin: 0 auto;
     }
 
@@ -48,14 +51,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 84px;
-      border-bottom: 1px solid var(--line);
+      min-height: 64px;
+      margin-top: 24px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: var(--white);
     }
 
     .wordmark {
-      font-family: var(--serif);
-      font-size: 19px;
-      letter-spacing: 0.06em;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
       text-decoration: none;
     }
 
@@ -65,56 +71,55 @@
 
     .site-nav {
       display: flex;
-      gap: 34px;
+      gap: 8px;
       align-items: center;
-      font-size: 12px;
-      letter-spacing: 0.08em;
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .site-nav a {
+      padding: 10px 12px;
+      border-radius: 50px;
       text-decoration: none;
-      transition: color 180ms ease;
+      transition: background 180ms ease;
     }
 
     .site-nav a:hover,
     .site-nav a:focus-visible {
-      color: var(--green);
+      background: var(--paper);
     }
 
     .hero {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 0.92fr;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 48px;
-      min-height: 640px;
-      padding: 64px;
-      overflow: hidden;
-      background: #19221c;
-      color: #f6f5f0;
+      min-height: 0;
+      padding: 76px 0 0;
+      color: var(--ink);
+      text-align: center;
     }
 
     .hero .eyebrow {
-      margin-bottom: 30px;
-      color: var(--lime);
+      justify-content: center;
+      margin-bottom: 28px;
     }
 
     .eyebrow {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 24px;
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
-      width: 26px;
+      width: 20px;
       height: 1px;
-      background: currentColor;
+      background: var(--green);
       content: "";
     }
 
@@ -125,61 +130,62 @@
     }
 
     .hero h1 {
-      margin-bottom: 26px;
+      margin-bottom: 24px;
       font-family: var(--sans);
-      font-size: clamp(42px, 5.5vw, 70px);
-      font-weight: 800;
-      letter-spacing: -0.07em;
-      line-height: 1.16;
+      font-size: clamp(64px, 11vw, 144px);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
     }
 
     .hero h1 span {
-      color: var(--lime);
+      color: inherit;
       white-space: nowrap;
     }
 
     .hero-copy {
-      max-width: 360px;
-      margin-bottom: 34px;
-      color: #c1c9c1;
-      font-size: 13px;
-      line-height: 2;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.5;
     }
 
     .text-link {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      color: #f6f5f0;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      padding: 10px 12px 10px 20px;
+      border-radius: 50px;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 500;
       text-decoration: none;
     }
 
     .text-link span {
       display: grid;
-      width: 38px;
-      height: 38px;
+      width: 28px;
+      height: 28px;
       place-items: center;
-      border: 1px solid rgba(215, 237, 155, 0.65);
+      background: var(--green);
+      color: var(--ink);
       border-radius: 50%;
       transition: color 180ms ease, background 180ms ease, transform 180ms ease;
     }
 
     .text-link:hover span {
       transform: translateX(3px);
-      background: var(--lime);
+      background: var(--sandstone);
       color: var(--ink);
     }
 
     .portrait-card {
       position: relative;
-      display: block;
-      height: 480px;
-      overflow: hidden;
-      background: var(--lime);
-      isolation: isolate;
+      width: min(820px, 100%);
+      height: 360px;
+      margin-top: 28px;
     }
 
     .portrait-card::before,
@@ -190,50 +196,50 @@
 
     .portrait-card::before {
       z-index: -1;
-      width: 340px;
-      height: 340px;
-      top: 50%;
+      width: min(560px, 84%);
+      height: 230px;
+      top: 78px;
       left: 50%;
-      border: 1px solid rgba(25, 34, 28, 0.18);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
+      border-radius: 63.75px;
+      background: var(--sandstone);
+      transform: translateX(-50%);
     }
 
     .portrait-card::after {
       z-index: -1;
-      top: 10px;
-      right: 16px;
-      color: rgba(25, 34, 28, 0.12);
+      top: 0;
+      right: 13%;
+      color: var(--white);
       content: "03";
-      font-size: clamp(110px, 14vw, 190px);
-      font-weight: 800;
-      letter-spacing: -0.12em;
-      line-height: 1;
+      font-size: 120px;
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
     }
 
     .hero-lineup {
-      position: absolute;
+      position: relative;
       z-index: 1;
-      right: 22px;
-      bottom: 38px;
-      left: 22px;
       display: flex;
       align-items: end;
       justify-content: center;
-      gap: 4px;
+      width: min(620px, 100%);
+      height: 320px;
+      margin: 0 auto;
+      gap: 12px;
     }
 
     .lineup-person {
       position: relative;
       display: grid;
       width: 33.333%;
-      max-width: 142px;
-      height: 190px;
+      max-width: 190px;
+      height: 245px;
       place-items: end center;
     }
 
     .lineup-person-primary {
-      height: 205px;
+      height: 270px;
     }
 
     .hero-avatar {
@@ -242,25 +248,24 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: drop-shadow(0 16px 18px rgba(25, 34, 28, 0.16));
     }
 
     .lineup-figure {
       position: relative;
       display: block;
-      width: 82px;
-      height: 166px;
+      width: 100px;
+      height: 205px;
     }
 
     .lineup-head {
       position: absolute;
       top: 0;
       left: 50%;
-      width: 43px;
-      height: 49px;
+      width: 52px;
+      height: 58px;
       transform: translateX(-50%);
       border-radius: 48% 48% 45% 45%;
-      background: #e8b993;
+      background: #f2c8a9;
     }
 
     .lineup-head::before {
@@ -268,48 +273,48 @@
       top: -3px;
       right: -2px;
       left: -2px;
-      height: 25px;
+      height: 28px;
       border-radius: 50% 50% 30% 25%;
-      background: #30302d;
+      background: var(--ink);
       content: "";
     }
 
     .lineup-body {
       position: absolute;
-      top: 44px;
-      left: 6px;
-      width: 70px;
-      height: 76px;
-      background: #45554a;
+      top: 52px;
+      left: 7px;
+      width: 86px;
+      height: 96px;
+      background: var(--green);
       clip-path: polygon(20% 0, 80% 0, 100% 26%, 83% 40%, 73% 23%, 76% 100%, 24% 100%, 27% 23%, 17% 40%, 0 26%);
     }
 
     .lineup-legs {
       position: absolute;
-      top: 112px;
-      left: 21px;
-      width: 40px;
-      height: 52px;
-      background: linear-gradient(90deg, #343633 0 43%, transparent 43% 57%, #343633 57% 100%);
+      top: 140px;
+      left: 26px;
+      width: 48px;
+      height: 62px;
+      background: linear-gradient(90deg, var(--ink) 0 43%, transparent 43% 57%, var(--ink) 57% 100%);
       clip-path: polygon(0 0, 100% 0, 85% 100%, 56% 100%, 50% 34%, 42% 100%, 13% 100%);
     }
 
-    .lineup-person-three .lineup-body {
-      background: #526565;
+    .lineup-person-two .lineup-body {
+      background: var(--blue);
     }
 
-    .lineup-person-three .lineup-legs {
-      background: linear-gradient(90deg, #343633 0 43%, transparent 43% 57%, #343633 57% 100%);
+    .lineup-person-three .lineup-body {
+      background: var(--coral);
     }
 
     .lineup-number {
       position: absolute;
-      bottom: -24px;
+      bottom: -22px;
       left: 50%;
-      color: var(--ink);
+      color: var(--muted);
       font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
+      font-weight: 500;
+      letter-spacing: 0.08em;
       transform: translateX(-50%);
     }
 
@@ -317,36 +322,141 @@
       position: absolute;
       z-index: 2;
       top: 16px;
-      right: 16px;
+      right: 10%;
       margin: 0;
-      color: var(--ink);
+      color: var(--muted);
       font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+      font-weight: 500;
+      letter-spacing: 0.08em;
     }
 
     .section {
-      padding: 88px 0;
-      border-top: 1px solid var(--line);
+      padding: 104px 0 0;
     }
 
     .section-heading {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 52px;
-      margin-bottom: 42px;
+      grid-template-columns: 0.6fr 1.4fr;
+      gap: 32px;
+      margin-bottom: 28px;
     }
 
     .section-heading .eyebrow {
-      margin: 8px 0 0;
+      margin: 10px 0 0;
     }
 
     .section-heading h2 {
       margin-bottom: 0;
-      font-family: var(--serif);
-      font-size: clamp(31px, 4vw, 44px);
-      font-weight: 400;
-      letter-spacing: 0.03em;
+      font-family: var(--sans);
+      font-size: clamp(32px, 5vw, 53px);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 1.15;
+    }
+
+    .work-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 28px;
+      padding: 21px;
+      border-radius: 50px;
+      background: var(--white);
+    }
+
+    .work-art {
+      position: relative;
+      display: grid;
+      min-height: 280px;
+      overflow: hidden;
+      place-items: center;
+      border-radius: 63.75px;
+      background: var(--sandstone);
+    }
+
+    .work-art::before,
+    .work-art::after {
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .work-art::before {
+      top: 24px;
+      right: 28px;
+      width: 76px;
+      height: 76px;
+      background: var(--green);
+    }
+
+    .work-art::after {
+      bottom: 24px;
+      left: 28px;
+      width: 42px;
+      height: 42px;
+      background: var(--coral);
+    }
+
+    .work-art-title {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+      text-align: center;
+    }
+
+    .work-content {
+      padding: 10px 24px 10px 0;
+    }
+
+    .work-meta {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    .work-card h3 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      line-height: 1.2;
+    }
+
+    .work-description {
+      margin-bottom: 18px;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 18px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .work-tags li {
+      padding: 5px 10px;
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .work-link {
+      color: var(--ink);
+      font-size: 15px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .members-grid {
@@ -357,55 +467,56 @@
 
     .member-card {
       overflow: hidden;
-      background: #fffefa;
-      border: 1px solid var(--line);
+      padding: 21px;
+      border-radius: 50px;
+      background: var(--white);
     }
 
     .member-portrait {
       display: grid;
       width: 108px;
       height: 108px;
-      margin: 26px auto 4px;
+      margin: 0 auto;
       place-items: center;
       border-radius: 50%;
       color: var(--ink);
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: 32px;
     }
 
     .member-portrait-two {
-      background: #d9c9ae;
+      background: var(--blue);
     }
 
     .member-portrait-three {
-      background: #c3d4c8;
+      background: var(--coral);
     }
 
     .member-portrait-avatar {
       display: block;
-      width: 140px;
-      height: 140px;
-      margin: 10px auto 0;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
       object-fit: contain;
     }
 
     .member-content {
-      padding: 18px 24px 26px;
+      padding: 18px 0 0;
     }
 
     .member-number {
       margin-bottom: 10px;
-      color: var(--green);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
     }
 
     .member-card h3 {
       margin: 0 0 12px;
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 400;
+      font-family: var(--sans);
+      font-size: 20px;
+      font-weight: 500;
     }
 
     .member-card h3 rt {
@@ -413,24 +524,23 @@
     }
 
     .member-intro,
-    .member-details,
-    .about-description {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 2;
+    .member-details {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     .member-intro {
       margin-bottom: 0;
-      min-height: 52px;
+      min-height: 45px;
     }
 
     .member-details {
       display: grid;
       grid-template-columns: 76px 1fr;
       gap: 0 8px;
-      margin: 18px 0 0;
-      padding-top: 14px;
+      margin: 16px 0 0;
+      padding-top: 16px;
       border-top: 1px solid var(--line);
     }
 
@@ -448,39 +558,18 @@
       font-weight: 600;
     }
 
-    .profile-panel {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 52px;
-      align-items: center;
-      padding: 42px;
-      background: #e9ebdf;
-    }
-
-    .profile-panel h2 {
-      margin-bottom: 14px;
-      font-family: var(--serif);
-      font-size: 30px;
-      font-weight: 400;
-    }
-
-    .profile-panel .eyebrow {
-      margin-bottom: 14px;
-    }
-
-    .group-description {
-      margin-bottom: 0;
-    }
-
     .site-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       min-height: 100px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+      margin: 104px 0 24px;
+      padding: 24px 32px;
+      border-radius: 50px;
+      background: var(--yellow);
+      color: var(--ink);
       font-size: 11px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
     }
 
     .site-footer p {
@@ -488,77 +577,109 @@
     }
 
     .back-to-top {
-      color: var(--green);
-      text-decoration: none;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     :focus-visible {
-      outline: 2px solid var(--green);
+      outline: 2px solid var(--coral);
       outline-offset: 4px;
     }
 
     @media (max-width: 720px) {
       .page-shell {
-        width: min(100% - 40px, 540px);
+        width: min(100% - 32px, 540px);
       }
 
       .site-header {
-        min-height: 72px;
+        min-height: 60px;
+        margin-top: 16px;
+        padding: 6px 12px;
       }
 
       .site-nav {
-        gap: 18px;
+        gap: 0;
         font-size: 11px;
       }
 
+      .site-nav a {
+        padding: 8px 8px;
+      }
+
       .hero {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        min-height: auto;
-        padding: 38px 24px 24px;
+        padding-top: 60px;
       }
 
       .hero h1 {
-        font-size: clamp(38px, 10.5vw, 60px);
+        font-size: clamp(48px, 10vw, 81px);
+      }
+
+      .hero-copy {
+        font-size: 16px;
       }
 
       .portrait-card {
-        height: 340px;
+        height: 290px;
+        margin-top: 18px;
       }
 
       .portrait-card::before {
-        width: 260px;
-        height: 260px;
+        width: min(440px, 92%);
+        height: 190px;
+        top: 72px;
       }
 
       .hero-lineup {
-        right: 12px;
-        bottom: 30px;
-        left: 12px;
-        gap: 0;
+        width: min(480px, 100%);
+        height: 260px;
+        gap: 4px;
       }
 
       .lineup-person {
-        height: 145px;
+        height: 195px;
+        max-width: 130px;
       }
 
       .lineup-person-primary {
-        height: 158px;
+        height: 215px;
       }
 
       .lineup-figure {
-        transform: scale(0.82);
+        transform: scale(0.76);
         transform-origin: bottom center;
       }
 
       .section {
-        padding: 66px 0;
+        padding: 80px 0 0;
       }
 
-      .section-heading,
-      .profile-panel {
+      .section-heading {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 12px;
+      }
+
+      .section-heading {
+        margin-bottom: 20px;
+      }
+
+      .work-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+      }
+
+      .work-art {
+        min-height: 210px;
+        border-radius: 50px;
+      }
+
+      .work-content {
+        padding: 0 8px 8px;
+      }
+
+      .work-card h3 {
+        font-size: 26px;
       }
 
       .members-grid {
@@ -569,32 +690,34 @@
         display: grid;
         grid-template-columns: 112px 1fr;
         align-items: center;
+        padding: 16px;
       }
 
       .member-portrait {
         width: 84px;
         height: 84px;
-        margin: 20px 14px;
+        margin: 0 auto;
         font-size: 26px;
       }
 
       .member-portrait-avatar {
         width: 84px;
         height: 84px;
-        margin: 20px 14px;
+        margin: 0 auto;
       }
 
       .member-content {
-        padding: 20px 18px 20px 8px;
+        padding: 0 0 0 12px;
       }
 
       .member-intro {
         min-height: 0;
       }
 
-      .profile-panel {
-        padding: 28px 24px;
-        gap: 12px;
+      .site-footer {
+        min-height: 80px;
+        margin: 80px 0 16px;
+        padding: 20px 24px;
       }
     }
 
@@ -604,12 +727,20 @@
       }
 
       .hero h1 {
-        font-size: clamp(36px, 10vw, 40px);
+        font-size: clamp(42px, 12vw, 48px);
       }
 
       .site-nav {
-        gap: 12px;
-        font-size: 10px;
+        gap: 0;
+        font-size: 9px;
+      }
+
+      .site-nav a {
+        padding: 7px 5px;
+      }
+
+      .wordmark {
+        font-size: 14px;
       }
 
       .member-card {
@@ -619,24 +750,27 @@
       .member-portrait {
         width: 68px;
         height: 68px;
-        margin: 16px 10px;
         font-size: 22px;
       }
 
       .member-portrait-avatar {
         width: 68px;
         height: 68px;
-        margin: 16px 10px;
       }
 
       .member-content {
-        padding-right: 12px;
-        padding-left: 6px;
+        padding-left: 8px;
       }
 
       .member-details {
-        grid-template-columns: 68px 1fr;
+        grid-template-columns: 62px 1fr;
         font-size: 12px;
+      }
+
+      .site-footer {
+        padding-right: 18px;
+        padding-left: 18px;
+        font-size: 10px;
       }
     }
 
@@ -653,28 +787,26 @@
 <body>
   <div class="page-shell" id="top">
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="3人のプロフィール ホーム">our<span>.</span>profile</a>
+      <a class="wordmark" href="#top" aria-label="3人のポートフォリオ ホーム">our<span>.</span>portfolio</a>
       <nav class="site-nav" aria-label="メインナビゲーション">
         <a href="#members">MEMBERS</a>
-        <a href="#group">ABOUT US</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="intro-title">
         <div class="hero-content">
-          <p class="eyebrow">Three people / Three styles</p>
-          <h1 id="intro-title">自分らしさを、<br><span>まとう。</span></h1>
+          <p class="eyebrow">Three creators / Portfolio</p>
+          <h1 id="intro-title">それぞれの個性が、<br><span>ひとつの形になる。</span></h1>
           <p class="hero-copy">
-            好きなことも、似合うスタイルもそれぞれ。<br>
-            私たち3人の個性を紹介します。
+            3人それぞれの個性を紹介するポートフォリオです。
           </p>
-          <a class="text-link" href="#members">VIEW THE MEMBERS <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#members">VIEW OUR MEMBERS <span aria-hidden="true">↘</span></a>
         </div>
         <div class="portrait-card" role="img" aria-label="3人のメンバーが並んだプロフィールビジュアル">
           <div class="hero-lineup" aria-hidden="true">
             <div class="lineup-person lineup-person-primary">
-              <img class="hero-avatar" src="assets/ryunosuke-avater.png" alt="">
+              <img class="hero-avatar" src="assets/ryunosuke-avatar.png" alt="">
               <span class="lineup-number">01</span>
             </div>
             <div class="lineup-person lineup-person-two">
@@ -698,16 +830,44 @@
         </div>
       </section>
 
+      <!--
+        制作実績はまだないため、現在は非表示にしています。
+        制作実績ができたら、このコメントを解除してください。
+        <section class="section" id="works" aria-labelledby="works-title">
+          <div class="section-heading">
+            <p class="eyebrow">01 / Works</p>
+            <div>
+              <h2 id="works-title">制作実績</h2>
+            </div>
+          </div>
+          <article class="work-card">
+            <div class="work-art" aria-hidden="true">
+              <p class="work-art-title">OUR<br>WORKS</p>
+            </div>
+            <div class="work-content">
+              <p class="work-meta">PROJECT 01 / WEB</p>
+              <h3>3人のポートフォリオサイト</h3>
+              <p class="work-description">3人のプロフィールや個性を紹介するために制作しているWebサイトです。</p>
+              <ul class="work-tags" aria-label="作品の種類">
+                <li>WEB</li>
+                <li>PORTFOLIO</li>
+              </ul>
+              <a class="work-link" href="#members">メンバーを見る →</a>
+            </div>
+          </article>
+        </section>
+      -->
+
       <section class="section" id="members" aria-labelledby="members-title">
         <div class="section-heading">
-          <p class="eyebrow">01 / Members</p>
+          <p class="eyebrow">02 / Members</p>
           <div>
             <h2 id="members-title">メンバー紹介</h2>
           </div>
         </div>
         <div class="members-grid">
           <article class="member-card">
-            <img class="member-portrait-avatar" src="assets/ryunosuke-avater.png" alt="中邨隆之介さんのアバター">
+            <img class="member-portrait-avatar" src="assets/ryunosuke-avatar.png" alt="中邨隆之介さんのアバター">
             <div class="member-content">
               <p class="member-number">MEMBER 01</p>
               <h3><ruby>中邨隆之介<rt>なかむらりゅうのすけ</rt></ruby></h3>
@@ -745,22 +905,10 @@
         </div>
       </section>
 
-      <section class="section" id="group" aria-labelledby="group-title">
-        <div class="profile-panel">
-          <div>
-            <p class="eyebrow">02 / About us</p>
-            <h2 id="group-title">私たちについて</h2>
-          </div>
-          <p class="about-description group-description">
-            ここに3人の関係や共通点、グループについての紹介を書いてください。
-            一緒に取り組んでいることや、このサイトを作ったきっかけを紹介するのもおすすめです。
-          </p>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 OUR PROFILE</p>
+      <p>© 2026 OUR PORTFOLIO</p>
       <a class="back-to-top" href="#top">BACK TO TOP ↑</a>
     </footer>
   </div>

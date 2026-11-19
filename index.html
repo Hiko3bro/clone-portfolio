@@ -207,11 +207,11 @@
 
     .portrait-card::after {
       z-index: -1;
-      top: 0;
+      top: -72px;
       right: 13%;
       color: var(--white);
       content: "03";
-      font-size: 120px;
+      font-size: clamp(72px, 7.1vw, 90px);
       font-weight: 500;
       letter-spacing: -0.06em;
       line-height: 0.95;
@@ -242,6 +242,12 @@
       height: 270px;
     }
 
+    .lineup-person-three {
+      width: 50%;
+      max-width: 270px;
+      height: 270px;
+    }
+
     .hero-avatar {
       display: block;
       width: 100%;
@@ -251,6 +257,8 @@
     }
 
     .lineup-person-three .hero-avatar {
+      min-width: 0;
+      min-height: 0;
       object-fit: contain;
       object-position: center bottom;
     }
@@ -650,6 +658,16 @@
         height: 215px;
       }
 
+      .lineup-person-three {
+        width: 55%;
+        max-width: 270px;
+        height: 215px;
+      }
+
+      .portrait-card::after {
+        top: -28px;
+      }
+
       .lineup-figure {
         transform: scale(0.76);
         transform-origin: bottom center;
@@ -776,6 +794,12 @@
         padding-right: 18px;
         padding-left: 18px;
         font-size: 10px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .lineup-person-three {
+        width: 43%;
       }
     }
 
